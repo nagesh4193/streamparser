@@ -1,5 +1,7 @@
 language: python
 cache: pip
+arch:
+   - ppc64le
 python:
     - '3.4'
     - '3.5'
