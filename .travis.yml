@@ -1,4 +1,7 @@
 language: python
+arch:
+    - amd64
+    - ppc64le
 cache: pip
 python:
     - '3.4'
@@ -16,6 +19,13 @@ after_success:
 matrix:
     allow_failures:
         - python: nightly
+        - arch: ppc64le
+          python: nightly
+# Disable Version pypy3 for power support          
+jobs:
+    exclude:
+        - arch: ppc64le
+          python: pypy3
 notifications:
     irc:
         channels:
